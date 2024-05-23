@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+// 这个注解是一个复合注解，会扫描这个启动项所在的软件包以及其子包，也就是java目录下的所有的注解，说白了有这个注解就无需在config中繁琐地声明bean了
 @SpringBootApplication
 public class JavassmApplication {
 
@@ -22,7 +23,6 @@ public class JavassmApplication {
         System.out.println(context.getBean("test"));
         // 通过反射获取bean对象
         System.out.println(context.getBean("t1"));
-        System.out.println(context.getBean("t2"));
     }
 
 }
