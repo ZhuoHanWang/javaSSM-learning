@@ -32,7 +32,12 @@ public class Main{
             // 我使用mapper类的接口，更加简洁地封装方法，避免写代码的时候还要关注返回类型
             System.out.println("我使用mapper类的接口，更加简洁地封装方法，避免写代码的时候还要关注返回类型");
             StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
-            studentMapper.selectOneStudent();
+            studentMapper.selectOneStudent(1);
+            studentMapper.selectStudent().forEach(System.out::println);
+            // 使用插入语句,记得添加无参构造的注解
+            // 这样能添加一定是因为存在id的自增，表一定要设定
+            System.out.println("我来看看插入的效果");
+            studentMapper.insertStudent(new Student().setName("王卓涵").setSex("M"));
             studentMapper.selectStudent().forEach(System.out::println);
         }
     }

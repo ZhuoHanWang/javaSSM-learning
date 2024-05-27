@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface StudentMapper {
     List<Student> selectStudent();
-    Student selectOneStudent();
+    Student selectOneStudent(int id);
+
+    int insertStudent(Student student);
 
 }

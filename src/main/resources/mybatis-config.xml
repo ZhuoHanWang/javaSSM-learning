@@ -4,8 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!--设置返回类的别名-->
+    <!--<typeAliases>-->
+    <!--    <typeAlias type="only_mybatis.entity.Student" alias="student"/>-->
+    <!--</typeAliases>-->
+
+    <!--替换为别名扫描指定包名-->
     <typeAliases>
-        <typeAlias type="only_mybatis.entity.Student" alias="student"/>
+        <package name="only_mybatis.entity"/>
     </typeAliases>
 
     <!--    生产环境配置-->

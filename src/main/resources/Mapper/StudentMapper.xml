@@ -20,8 +20,12 @@
         select *
         from stu;
     </select>
-
-    <select id="selectOneStudent" resultType="student">
+    <!--paramtype可加可不加-->
+    <select id="selectOneStudent"  resultType="student">
         select * from stu where sid = #{sid};
     </select>
+    
+    <insert id="insertStudent">
+        insert into stu(name,sex) values(#{name},#{sex})
+    </insert>
 </mapper>
