@@ -1,5 +1,6 @@
 package only_mybatis;
 
+import only_mybatis.dao.StudentMapper;
 import only_mybatis.entity.Student;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -27,6 +28,12 @@ public class Main{
             // 单行查询stu,单行查询需要调用sql会话的单行查询方法
             Student student2 = sqlSession.selectOne("selectOneStudent",1);
             System.out.println(student2);
+
+            // 我使用mapper类的接口，更加简洁地封装方法，避免写代码的时候还要关注返回类型
+            System.out.println("我使用mapper类的接口，更加简洁地封装方法，避免写代码的时候还要关注返回类型");
+            StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+            studentMapper.selectOneStudent();
+            studentMapper.selectStudent().forEach(System.out::println);
         }
     }
 }
