@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+        这个命名空间，一个限定了在此xml中，每一个表的sql语句的唯一id：例如，两个表都有selectid，但是命名空间不同，mybatis就能解析成功，没有命名空间是会报错的
+        二是它能够与接口绑定，绑定一个包的接口，这个接口里面就刚好放着，这些方法的所有映射就行，实现都是mybatis代理实现的，也就是这些sql语句到类的方法的使用是mybatis自动完成的
+        限制命名空间防止，很多类都有同一个方法id，分不同接口存放是个好东西
+
+        -->
+<!--命名空间是不能为空的-->
+<!--一定注意一个先后顺序，是mybatis的mapper类中实现了查询语句，通过id可以在java类中把查询语句当作方法调用，不是mybatis实现了方法-->
+<mapper namespace="only_mybatis.dao.StudentMapper">
+    <select id="selectStudent" resultType="only_mybatis.entity.Student">
+        select *
+        from stu;
+    </select>
+
+    <select id="selectOneStudent" resultType="only_mybatis.entity.Student">
+        select * from stu where sid = #{sid};
+    </select>
+</mapper>

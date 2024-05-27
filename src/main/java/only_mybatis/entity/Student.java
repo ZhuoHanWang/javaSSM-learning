@@ -1,13 +1,12 @@
 package only_mybatis.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-// 自动生成每个属性的get和set方法
-@Getter
-@Setter
-// 全参构造帮我们写
+// 这就包含了很多注解了，Data注解提供类的get、set、equals、hashCode、canEqual、toString方法
+@Data
 @AllArgsConstructor
 public class Student {
     private Integer sid;

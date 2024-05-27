@@ -16,6 +16,8 @@
         </environment>
     </environments>
 <!--    为mapper类的xml指定路径，mybatis的全部配置信息都要放在这里-->
-
+    <mappers>
+        <mapper url="file:C:\develop_learning\JAVA\javassm\src\main\resources\Mapper\StudentMapper.xml"/>
+    </mappers>
 </configuration>
 
