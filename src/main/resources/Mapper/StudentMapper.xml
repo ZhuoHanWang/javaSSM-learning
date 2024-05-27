@@ -15,6 +15,7 @@
 <!--命名空间是不能为空的-->
 <!--一定注意一个先后顺序，是mybatis的mapper类中实现了查询语句，通过id可以在java类中把查询语句当作方法调用，不是mybatis实现了方法-->
 <mapper namespace="only_mybatis.dao.StudentMapper">
+    <!--返回类型使用了别名student-->
     <select id="selectStudent" resultType="student">
         select *
         from stu;

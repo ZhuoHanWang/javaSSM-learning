@@ -3,8 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--设置返回类的别名-->
+    <typeAliases>
+        <typeAlias type="only_mybatis.entity.Student" alias="student"/>
+    </typeAliases>
 
-<!--    生产环境配置-->
+    <!--    生产环境配置-->
     <environments default="development">
         <!--设置的开发环境-->
         <environment id="development">
@@ -17,12 +21,8 @@
             </dataSource>
         </environment>
     </environments>
-    <!--设置返回类的别名-->
-    <typeAliases>
-        <typeAlias type="only_mybatis.entity.Student" alias="student">
-    </typeAliases>
 
-<!--    为mapper类的xml指定路径，mybatis的全部配置信息都要放在这里-->
+    <!--    为mapper类的xml指定路径，mybatis的全部配置信息都要放在这里-->
     <mappers>
         <mapper url="file:C:\develop_learning\JAVA\javassm\src\main\resources\Mapper\StudentMapper.xml"/>
     </mappers>
